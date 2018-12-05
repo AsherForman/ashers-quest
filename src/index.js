@@ -1,17 +1,11 @@
-
-
-// sky.style.position = 'absolute'
-// sky.style.left = '100px'
-// sky.style.top = '0px'
-// sky.style.width = "400px"
-// sky.className = 'created with JavaScript' /
-
-// document.body.appendChild(sky)
-
+// let characterNew = new
+// This is creating an image tag in JS that is going to be used in HTML
 let characterElement = document.createElement('img') 
 let bird = document.createElement('img')
 let sky = document.createElement('img')
+let movement; 
 
+// This attaches src to the image tag that was created
 characterElement.src = `assets/character/static.gif` 
 bird.src = `assets/PixelArt/SmallBird.png`
 sky.src = `assets/PixelArt/sky.png`
@@ -30,9 +24,18 @@ bird.style.top = '0px'
 bird.style.width = "50px"
 bird.className = 'created with JavaScript' 
 
+sky.style.position = 'absolute'
+sky.style.left = '20px'
+sky.style.top = '0px'
+sky.style.width = "600px"
+sky.className = 'created with JavaScript'
+
+// This pastes that bird or the boyo on the body
+document.body.appendChild(sky)
 document.body.appendChild(characterElement)
 document.body.appendChild(bird)
 
+// This is where the collision is with my bird and my boyo
 function collision(){
     var man = {x: parseInt(characterElement.style.left), y: parseInt(characterElement.style.top), width: 55, height: 77}
     var birdDimensions = {x: parseInt(bird.style.left), y: parseInt(bird.style.top), width : 50, height: 36.53}
@@ -46,7 +49,9 @@ function collision(){
             console.log("nothing")
 }
 
-let movement; 
+// These are variables that allow the boyo to walk north, east, south, and west.
+
+
 function walkWest(){
     stop()
     movement = setInterval(function(){
@@ -97,7 +102,7 @@ function stop(){
     clearInterval(movement)
     characterElement.src = `assets/character/static.gif`
 }
-
+// This is assigning the walk variables to the arrow keys
 document.addEventListener("keydown", function(e){
     if (e.keyCode == '38') {
         walkNorth()
