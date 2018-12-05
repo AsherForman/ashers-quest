@@ -1,51 +1,46 @@
-// What type of variable is "characterElement"?
-// Uncomment the console.log below to see for yourself!
+
+
+// sky.style.position = 'absolute'
+// sky.style.left = '100px'
+// sky.style.top = '0px'
+// sky.style.width = "400px"
+// sky.className = 'created with JavaScript' /
+
+// document.body.appendChild(sky)
+
 let characterElement = document.createElement('img') 
-console.log(characterElement)
 let bird = document.createElement('img')
-console.log(characterElement)
 let sky = document.createElement('img')
-console.log(characterElement)
-// What is the SRC attribute of an image tag used for? 
-// Does this change the HTML when you view it in the elements pane of your developers console?
+
 characterElement.src = `assets/character/static.gif` 
 bird.src = `assets/PixelArt/SmallBird.png`
 sky.src = `assets/PixelArt/sky.png`
-// What is "characterElement.style"?
 
-sky.style.position = 'absolute'
-sky.style.left = '100px'
-sky.style.top = '0px'
-sky.style.width = "400px"
-sky.className = 'created with JavaScript' /
-
-document.body.appendChild(sky)
-
+// boyo
 characterElement.style.position = 'absolute'
 characterElement.style.left = '0px'
 characterElement.style.top = '0px'
 characterElement.style.width = "50px"
-characterElement.className = 'created with JavaScript' /
+characterElement.className = 'created with JavaScript' 
 
-document.body.appendChild(characterElement)
-
-
+// bird
 bird.style.position = 'absolute'
 bird.style.left = '200px'
 bird.style.top = '0px'
 bird.style.width = "50px"
-bird.className = 'created with JavaScript' /
+bird.className = 'created with JavaScript' 
 
+document.body.appendChild(characterElement)
 document.body.appendChild(bird)
 
 function collision(){
-    var man = {x: parseInt(characterElement.left), y: parseInt(characterElement.top), width: 55, height: 77}
-    var bird = {x: parseInt(bird.style.left), y: parseInt(bird.style.top), width : 50, height: 36.53}
+    var man = {x: parseInt(characterElement.style.left), y: parseInt(characterElement.style.top), width: 55, height: 77}
+    var birdDimensions = {x: parseInt(bird.style.left), y: parseInt(bird.style.top), width : 50, height: 36.53}
     
-        if (bird.x < man.x + man.width &&
-            bird.x + bird.width > man.x &&
-            bird.y < man.y + man.height &&
-            bird.y + bird.height > man.y)
+        if (birdDimensions.x < man.x + man.width &&
+            birdDimensions.x + birdDimensions.width > man.x &&
+            birdDimensions.y < man.y + man.height &&
+            birdDimensions.y + bird.height > man.y)
             stop() + console.log("Crashed into the BIRB")
         else
             console.log("nothing")
