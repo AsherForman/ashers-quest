@@ -1,39 +1,26 @@
 // let characterNew = new
 // This is creating an image tag in JS that is going to be used in HTML
-let characterElement = document.createElement('img') 
-let bird = document.createElement('img')
-let sky = document.createElement('img')
-let movement; 
+let bird = new Bird()
+// let sky = document.createElement('img')
+let sky = new Sky() 
+let characterElement = new Character()
 
-// This attaches src to the image tag that was created
-characterElement.src = `assets/character/static.gif` 
-bird.src = `assets/PixelArt/SmallBird.png`
-sky.src = `assets/PixelArt/sky.png`
 
-// boyo
-characterElement.style.position = 'absolute'
-characterElement.style.left = '0px'
-characterElement.style.top = '0px'
-characterElement.style.width = "50px"
-characterElement.className = 'created with JavaScript' 
 
-// bird
-bird.style.position = 'absolute'
-bird.style.left = '200px'
-bird.style.top = '0px'
-bird.style.width = "50px"
-bird.className = 'created with JavaScript' 
 
-sky.style.position = 'absolute'
-sky.style.left = '20px'
-sky.style.top = '0px'
-sky.style.width = "600px"
-sky.className = 'created with JavaScript'
+// sky.src = `assets/PixelArt/sky.png`
+
+
+// sky.style = {}
+// sky.style.position = 'absolute'
+// sky.style.left = '20px'
+// sky.style.top = '0px'
+// sky.style.width = "600px"
+// sky.className = 'created with JavaScript'
 
 // This pastes that bird or the boyo on the body
-document.body.appendChild(sky)
-document.body.appendChild(characterElement)
-document.body.appendChild(bird)
+// document.body.appendChild(sky)
+
 
 // This is where the collision is with my bird and my boyo
 function collision(){
